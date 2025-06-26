@@ -1,20 +1,14 @@
 import React, { useState } from "react";
 import ProductButtons from "./components/ProductButtons";
 import "./assets/styles/style.scss";
-
-//飲み物情報
-const products = [
-  { id: "Coffee", drinkName: "コーヒー", drinkPrice: 480 },
-  { id: "tea", drinkName: "紅茶", drinkPrice: 280 },
-  { id: "milk", drinkName: "ミルク", drinkPrice: 180 },
-  { id: "coke", drinkName: "コーラ", drinkPrice: 190 },
-  { id: "beer", drinkName: "ビール", drinkPrice: 580 },
-];
+import ProductsDirector from "./ProductDirector";
 
 function App() {
-  const [counter, setCounter] = useState(Array(products.length).fill(0));
+  
+  const [counter, setCounter] = useState(Array(products.getProducts().length).fill(0));
   const [sumPrice, setSumPrice] = useState(0);
   const [sumCount, setSumCount] = useState(0);
+  const [products, setProducts] = useState(new ProductsDirector());
 
   // クリックされたらカウントアップする処理
   const handleClick = (index) => {
