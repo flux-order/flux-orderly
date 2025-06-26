@@ -64,4 +64,4 @@
 ## 備考
 - データ通信や認証のセキュリティはGoogle/Firebase基準に準拠する
 - UIはユーザビリティを重視し、できる限りタッチ操作で完結させる設計とする
-lux-orderly
+Flux-orderly
