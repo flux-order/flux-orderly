@@ -1,15 +1,18 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ProductButtons from "./components/ProductButtons";
 import "./assets/styles/style.scss";
 import ProductsDirector from "./ProductDirector";
 
 function App() {
-  const [counter, setCounter] = useState(
-    Array(products.getProducts().length).fill(0)
-  );
+  const [counter, setCounter] = useState([]);
   const [sumPrice, setSumPrice] = useState(0);
   const [sumCount, setSumCount] = useState(0);
   const [products, setProducts] = useState(new ProductsDirector());
+
+  // 初期レンダリング時にカウンターに商品数を代入
+  useEffect(() => {
+    setCounter(Array(products.getProducts().length).fill(0));
+  }, []);
 
   // クリックされたらカウントアップする処理
   const handleClick = (index) => {
