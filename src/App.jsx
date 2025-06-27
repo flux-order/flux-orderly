@@ -4,8 +4,9 @@ import "./assets/styles/style.scss";
 import ProductsDirector from "./ProductDirector";
 
 function App() {
-  
-  const [counter, setCounter] = useState(Array(products.getProducts().length).fill(0));
+  const [counter, setCounter] = useState(
+    Array(products.getProducts().length).fill(0)
+  );
   const [sumPrice, setSumPrice] = useState(0);
   const [sumCount, setSumCount] = useState(0);
   const [products, setProducts] = useState(new ProductsDirector());
