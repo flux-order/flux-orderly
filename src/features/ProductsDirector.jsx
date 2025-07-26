@@ -1,4 +1,3 @@
-
 /*
 const products = [
   { id: "Coffee", drinkName: "コーヒー", drinkPrice: 480 },
@@ -10,9 +9,8 @@ const products = [
 */
 
 class ProductsDirector {
-  // id: object.array
   #products = [];
-  
+
   constructor() {
     console.log("create object!");
   }
@@ -22,30 +20,28 @@ class ProductsDirector {
   }
 
   // ? 商品の追加
-  // id: number, productName: string, productPrice: number
-  addProducts(id, name, price){
+  addProducts(id, name, price) {
     const newProduct = {
       id: id,
       name: name,
-      price: price
+      price: price,
     };
-    
-    this.#products.push(newProduct)
+
+    this.#products.push(newProduct);
   }
-  
+
   // ? 商品の削除を行う
-  // id: number
-  deleteProducts(id) {   
+  deleteProducts(id) {
     this.#products.splice(id, 1);
     this.#products = reWriteId(this.#products);
   }
 }
 
 // "id" を連番に書き換える
-function reWriteId (products) {
+function reWriteId(products) {
   return products.map((product, index) => {
-    return products.id = index;
-  })
+    return (product.id = index);
+  });
 }
 
 export default ProductsDirector;
